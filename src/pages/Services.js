@@ -1,48 +1,82 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const gallery = {
   Wedding: [
     '/images/couple.jpg',
     '/images/IMG_8974.JPG',
-    '/images/456.jpg'
+    '/images/456.jpg',
   ],
   Portrait: [
-    '/images/IMG_6979.JPG',
-    '/images/IMG_8974.JPG',
-    '/images/IMG_9100.JPEG.jpg'
+    '/images/b8.JPG',
+    '/images/b45.JPG',
+    '/images/b3.JPG',
   ],
   Fashion: [
-    '/images/fashion.jpg',
+    '/images/gh.jpg',
     '/images/1234.jpg',
-    '/images/5678.jpg'
+    '/images/87l.jpg',
   ],
   Product: [
-    '/images/seasoning_food.jpg',
-    '/images/789.jpg',
-    '/images/IMG_2030.JPG'
-  ]
+    '/images/aq.JPEG',
+    '/images/p4.JPG',
+    '/images/p7.JPG',
+  ],
 };
 
-const Services = () => {
+const Portfolio = () => {
   const [selected, setSelected] = useState('Wedding');
 
   return (
-    <div style={{ padding: '40px', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Our Services</h1>
-      <div style={{ marginBottom: '30px' }}>
+    <div style={{
+      background: 'linear-gradient(to right, #1f1c2c, #928dab)',
+      color: '#fff',
+      padding: '80px 20px',
+      minHeight: '100vh',
+    }}>
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+        <h1 style={{
+          fontSize: '3rem',
+          fontWeight: 'bold',
+          color: '#ffdd99',
+          marginBottom: '20px',
+        }}>
+          Explore Our Portfolio
+        </h1>
+        <p style={{
+          fontSize: '1.2rem',
+          maxWidth: '800px',
+          margin: '0 auto',
+          color: '#ddd',
+          lineHeight: '1.8',
+        }}>
+          Discover our creative journey through lenses. From emotional weddings to stylish fashion shoots, each image in our portfolio reflects a story, a moment, and a masterpiece.
+        </p>
+      </div>
+
+      {/* Category Buttons */}
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        marginBottom: '40px',
+        gap: '12px',
+      }}>
         {Object.keys(gallery).map((category) => (
           <button
             key={category}
             onClick={() => setSelected(category)}
             style={{
-              margin: '10px',
-              padding: '10px 20px',
-              backgroundColor: selected === category ? '#333' : '#777',
-              color: 'white',
+              padding: '12px 24px',
+              borderRadius: '30px',
+              backgroundColor: selected === category ? '#ffdd99' : '#333',
+              color: selected === category ? '#222' : '#fff',
               border: 'none',
-              borderRadius: '5px',
+              fontWeight: 'bold',
               cursor: 'pointer',
-              transition: 'background 0.3s'
+              transition: 'all 0.3s ease',
+              boxShadow: selected === category ? '0 4px 12px rgba(255,221,153,0.4)' : 'none',
             }}
           >
             {category}
@@ -50,31 +84,76 @@ const Services = () => {
         ))}
       </div>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '20px'
-        }}
-      >
+      {/* Image Grid */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gap: '25px',
+        padding: '0 20px',
+      }}>
         {gallery[selected].map((src, i) => (
-          <div key={i} style={{ borderRadius: '8px', overflow: 'hidden' }}>
+          <div key={i} style={{
+            overflow: 'hidden',
+            borderRadius: '12px',
+            position: 'relative',
+            boxShadow: '0 8px 25px rgba(0,0,0,0.5)',
+            transition: 'transform 0.3s ease-in-out',
+          }}>
             <img
               src={src}
               alt={`${selected} ${i + 1}`}
               style={{
                 width: '100%',
-                height: 'auto',
+                height: '100%',
                 objectFit: 'cover',
-                borderRadius: '8px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                transition: 'transform 0.5s ease, filter 0.3s',
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.style.filter = 'brightness(1.2)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.filter = 'brightness(1)';
               }}
             />
           </div>
         ))}
       </div>
+
+      {/* Category Navigation Links */}
+      <div style={{
+        marginTop: '60px',
+        textAlign: 'center',
+      }}>
+        <h2 style={{ color: '#ffdd99', marginBottom: '20px' }}>
+          Browse by Category
+        </h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
+          {Object.keys(gallery).map((cat, idx) => (
+            <Link
+              key={idx}
+              to={`/gallery/${cat}`}
+              style={{
+                padding: '10px 20px',
+                borderRadius: '30px',
+                backgroundColor: '#fff',
+                color: '#111',
+                textDecoration: 'none',
+                fontWeight: '600',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                transition: 'background 0.3s ease',
+              }}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#ffdd99'}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#fff'}
+            >
+              View All {cat}
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Services;
+export default Portfolio;

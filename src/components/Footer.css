@@ -2,34 +2,70 @@
   background-color: #111;
   color: #ccc;
   padding: 40px 20px 20px;
-  text-align: center;
   font-family: 'Segoe UI', sans-serif;
-  border-top: 1px solid #222;
-  margin-top: 60px;
 }
 
-.footer-content h2 {
-  font-size: 1.8rem;
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+.footer-column h2,
+.footer-column h3 {
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.footer-content p {
-  margin: 6px 0;
-  font-size: 1rem;
-}
-
-.footer-content a {
-  color: #25D366;
+.footer-column p,
+.footer-column a {
+  color: #ccc;
+  font-size: 0.95rem;
   text-decoration: none;
 }
 
-.footer-content a:hover {
-  text-decoration: underline;
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  color: #ffcc70;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5b;
 }
 
 .footer-bottom {
-  margin-top: 20px;
-  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 0.85rem;
   color: #888;
 }
