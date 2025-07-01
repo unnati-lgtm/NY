@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const gallery = {
   Wedding: [
@@ -119,38 +118,6 @@ const Portfolio = () => {
             />
           </div>
         ))}
-      </div>
-
-      {/* Category Navigation Links */}
-      <div style={{
-        marginTop: '60px',
-        textAlign: 'center',
-      }}>
-        <h2 style={{ color: '#ffdd99', marginBottom: '20px' }}>
-          Browse by Category
-        </h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
-          {Object.keys(gallery).map((cat, idx) => (
-            <Link
-              key={idx}
-              to={`/gallery/${cat}`}
-              style={{
-                padding: '10px 20px',
-                borderRadius: '30px',
-                backgroundColor: '#fff',
-                color: '#111',
-                textDecoration: 'none',
-                fontWeight: '600',
-                boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
-                transition: 'background 0.3s ease',
-              }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#ffdd99'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#fff'}
-            >
-              View All {cat}
-            </Link>
-          ))}
-        </div>
       </div>
     </div>
   );

@@ -95,11 +95,11 @@ const About = () => {
       <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2.5rem', color: '#5f72be', marginBottom: '20px' }}>Founder’s Vision</h2>
         <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#444' }}>
-          <strong>Akaram Pravej</strong>, the founder of NY Studio, is a passionate storyteller and a
+          <strong>Chand Sonkar</strong>, the founder of NY Studio, is a passionate storyteller and a
           visionary photographer with a Master’s degree in Mass Communication. His journey began with
           a simple dream: to capture authentic, emotional moments that go beyond the lens.
           <br /><br />
-          With deep roots in media, storytelling, and artistic direction, Akaram leads the team with
+          With deep roots in media, storytelling, and artistic direction, Chand leads the team with
           creativity, discipline, and a heartfelt connection to every project. His belief in
           authenticity and his eye for detail are what make NY Studio a trusted name today.
         </p>

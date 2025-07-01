@@ -9,11 +9,10 @@ const Header = () => (
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/services">Services</Link>
-<Link to="/portfolio" className="nav-link">Portfolio</Link>
-<Link to="/blog">Blog</Link>
+      <Link to="/portfolio" className="nav-link">Portfolio</Link>
+      <Link to="/blog">Blog</Link>
+      <Link to="/clients">Clients</Link> {/* ✅ Corrected this line */}
       <Link to="/contact">Contact</Link>
-
-
     </nav>
   </header>
 );

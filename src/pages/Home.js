@@ -137,7 +137,7 @@ const Home = () => {
             About NY Studio
           </h2>
           <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555' }}>
-            <strong>NY Studio</strong> was founded by <strong>Akaram Pravaej</strong> in 2014 with a
+            <strong>NY Studio</strong> was founded by <strong>Chand Sonkar</strong> in 2014 with a
             simple yet powerful vision: to capture the most precious moments in people’s lives with
             heart, creativity, and authenticity. What began as a small passion project in Uttar Pradesh
             has today grown into a full-service photography studio known for its unique storytelling
